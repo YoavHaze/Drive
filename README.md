@@ -3,7 +3,7 @@
 A comprehensive **Full-Stack Cloud Storage System** inspired by Google Drive.
 This project represents the culmination of the "Advanced System Programming" course, evolving from a local CLI tool into a distributed, multi-platform system with web and mobile interfaces.
 
-**Created by:** Yoav Haze & Ofir Finkelstein
+**Created by:** Yoav Haze & Ophir Finchelstein & Yehonatan Shemesh
 **Course:** Advanced System Programming @ BIU
 
 🔗 **Repository:** [GitHub - YoavHaze/Drive](https://github.com/YoavHaze/Drive.git)
