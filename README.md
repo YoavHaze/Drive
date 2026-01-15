@@ -1,56 +1,40 @@
-# Drive
-# 📂 Google Drive Clone - Advanced System Programming
+# ☁️ Google Drive Cloud
 
-## Description
-This project is a comprehensive **Full-Stack File Storage System** inspired by Google Drive. It was built as a cumulative project for the "Advanced System Programming" course, evolving from a basic local CLI tool into a distributed, multi-client cloud storage solution.
+A comprehensive **Full-Stack Cloud Storage System** inspired by Google Drive.
+This project represents the culmination of the "Advanced System Programming" course, evolving from a local CLI tool into a distributed, multi-platform system with web and mobile interfaces.
 
-The system allows users to upload, download, manage, and share files securely across different platforms (Web & Mobile), utilizing efficient compression algorithms and a robust architecture.
+**Created by:** Yoav Haze & Ofir Finkelstein
+**Course:** Advanced System Programming @ BIU
 
-## 🚀 Key Features
-* **Cross-Platform Access:** Accessible via a **React Web Interface** and a native **Android App**.
-* **High-Performance Storage:** The core storage engine is written in **C++** for optimal performance and file handling.
-* **Smart Compression:** Implements **RLE (Run-Length Encoding)** to save space on the server.
-* **Secure Authentication:** User registration, login, and role-based permissions (Viewer/Editor) managed via **Node.js**.
-* **Scalable Database:** Uses **MongoDB** for managing user metadata, directory structures, and file permissions.
-* **Containerized:** Fully Dockerized environment for easy deployment.
+🔗 **Repository:** [GitHub - YoavHaze/Drive](https://github.com/YoavHaze/Drive.git)
 
-## 🏗️ Architecture & Tech Stack
+---
 
-We designed the system using **Microservices** and **MVC** principles to ensure separation of concerns and scalability.
+## 📋 Table of Contents
 
-### 1. The Core (Storage Server) - `C++`
-* Acts as the heavy-lifter of the system.
-* Handles physical file I/O operations and compression algorithms.
-* Supports concurrent connections using **Multi-threading** and **Thread Pool**.
-* **Communication:** Listens for TCP commands from the API Gateway.
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Installation & Run](#installation--run)
+- [API Documentation](#api-documentation)
+- [Design Patterns](#design-patterns)
+- [Project Evolution](#project-evolution)
 
-### 2. The API Gateway (Backend) - `Node.js` & `Express`
-* Serves as the entry point for all clients.
-* **Logic:** Handles Business Logic, JWT Authentication, and Permissions.
-* **Database:** Connects to **MongoDB** to store user info and file metadata (names, paths, owners).
-* **Bridge:** Validates requests and forwards file operations to the C++ server via TCP.
+---
 
-### 3. The Clients (Frontend)
-* **Web Client:** A modern SPA built with **React** for desktop users.
-* **Mobile Client:** A native **Android** application for on-the-go access.
+## Overview
 
-## 🛠️ Project Evolution
+[cite_start]CloudDrive is a high-performance, distributed file storage service[cite: 1, 4]. It allows users to store files securely, organize them in folders, and access them from anywhere via a **Web Dashboard** or a dedicated **Android App**.
 
-The project was built in 4 main milestones, strictly adhering to **SOLID** and **Open/Closed** principles:
+**Core Capabilities:**
+* [cite_start]📁 **Smart Storage:** Efficient file handling with **RLE Compression** and multi-threaded processing[cite: 5].
+* 🔄 **Cross-Platform:** Seamless synchronization between Web (React) and Mobile (Android).
+* 🗄️ **Persistent Data:** User metadata and file structure managed by **MongoDB**.
+* [cite_start]⚡ **High Performance:** Core storage engine written in **C++** for maximum speed[cite: 9].
 
-* **Part 1: CLI Tool** - A local C++ program for file compression and management using the Command Pattern.
-* **Part 2: TCP Server** - Converted the CLI into a Multi-threaded TCP Server supporting concurrent C++ and Python clients.
-* **Part 3: Web API & React** - Wrapped the C++ server with a Node.js REST API and added a React Frontend.
-* **Part 4: Database & Mobile** - Integrated **MongoDB** for robust data persistence and added an **Android** client.
+---
 
-## 📦 How to Build and Run
+## Architecture
 
-The entire system is containerized. You can bring up all services (Database, Backend, Storage, Web) with a single command.
-
-### Prerequisites
-* Docker & Docker Compose
-
-### Build & Start
-To build and run the entire system:
-```bash
-docker-compose up --build
+[cite_start]The system follows a **Microservices Architecture**, separating the frontend, business logic, and storage engine[cite: 4, 7].
